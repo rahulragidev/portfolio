@@ -2,7 +2,6 @@ import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
-import { WavyBackground } from "./ui/wavy-background";
 
 const Hero = () => {
   return (
