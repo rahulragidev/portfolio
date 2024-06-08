@@ -1,7 +1,5 @@
 import { useState } from "react";
-import { IoCopyOutline } from "react-icons/io5";
-
-import Lottie from "react-lottie";
+import { IoCopyOutline, IoCallOutline } from "react-icons/io5";
 
 import { cn } from "@/lib/utils";
 
@@ -10,6 +8,7 @@ import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 import MagicButton from "../MagicButton";
+import Lottie from "lottie-react";
 
 export const BentoGrid = ({
   className,
@@ -64,7 +63,7 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const text = "hsu@jsmastery.pro";
+    const text = "iamrahulragi@gmail.com";
     navigator.clipboard.writeText(text);
     setCopied(true);
   };
@@ -156,24 +155,32 @@ export const BentoGridItem = ({
               </div>
             </div>
           )}
-          {id === 6 && (
-            <div className="mt-5 relative">
-              <div
-                className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
-                  }`}
-              >
-                <Lottie options={defaultOptions} height={200} width={400} />
-              </div>
+          { id === 6 && (
+  <div className="mt-5 relative">
+    <div
+      className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
+        }`}
+    >
+      <Lottie options={defaultOptions} height={200} width={400} />
+    </div>
 
-              <MagicButton
-                title={copied ? "Email is Copied!" : "Copy my email address"}
-                icon={<IoCopyOutline />}
-                position="left"
-                handleClick={handleCopy}
-                otherClasses="!bg-[#161A31]"
-              />
-            </div>
-          )}
+    <MagicButton
+      title={copied ? "Email is Copied!" : "Copy my email address"}
+      icon={<IoCopyOutline />}
+      position="left"
+      handleClick={handleCopy}
+      otherClasses="!bg-[#161A31]"
+    />
+
+    <MagicButton
+      title="Call me"
+      icon={<IoCallOutline />}
+      position="left"
+      handleClick={() => window.location.href = 'tel:+918686353153'}
+      otherClasses="!bg-[#161A31]"
+    />
+  </div>
+)}
         </div>
       </div>
     </div>
